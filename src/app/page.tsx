@@ -1,7 +1,7 @@
 import styles from "./page.module.css";
 import React from 'react';
 import Image from 'next/image';
-import { Rocket, Zap, Palette, Sparkles, Bot, Truck } from 'lucide-react';
+import { Rocket, Zap, Palette } from 'lucide-react';
 
 // --- Modern React Component Pattern ---
 
@@ -46,7 +46,7 @@ const AboutBento = () => (
       <div className={`${styles.bentoCard} ${styles.bentoLarge} glass-panel`}>
         <div className={styles.bentoIcon}><Rocket size={32} /></div>
         <h3>Visionaries in Code</h3>
-        <p>At Synvexis Digital, we merge cutting-edge technology with stunning design to create digital experiences that leave a lasting impression. We don't just build sites; we build scalable digital solutions.</p>
+        <p>At Synvexis Digital, we merge cutting-edge technology with stunning design to create digital experiences that leave a lasting impression. We don&apos;t just build sites; we build scalable digital solutions.</p>
       </div>
       <div className={`${styles.bentoCard} glass-panel`}>
         <div className={styles.bentoIcon}><Zap size={32} /></div>
@@ -135,7 +135,7 @@ const ContactFooter = () => (
     <section id="contact" className={`${styles.section} ${styles.contact}`}>
       <div className={`${styles.contactBanner} glass-panel`}>
         <h2 className="gradient-text">Ready to launch?</h2>
-        <p>Let's turn your vision into reality with a world-class platform.</p>
+        <p>Let&apos;s turn your vision into reality with a world-class platform.</p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '2rem', fontSize: '1.1rem' }}>
           <div><strong>Email:</strong> <a href="mailto:Synvexisdigital@gmail.com" className="accent-text">Synvexisdigital@gmail.com</a></div>
           <div><strong>Discord:</strong> <span className="accent-text">spaghetti8650</span></div>
