@@ -27,18 +27,15 @@ jobs:
       - name: Build Next.js app
         run: npm run build
 
-      - name: Create node_modules archive
-        run: tar -czf node_modules.tar.gz node_modules
-
-      - name: Zip build artifact
+      - name: Prepare standalone output
         run: |
-          zip -r release.zip . \
-            -x "*.git*" \
-            -x ".github/*" \
-            -x "node_modules/*"
+          cp -r .next/static .next/standalone/.next/static
+          cp -r public .next/standalone/public
 
-      - name: Add node_modules archive to zip
-        run: zip release.zip node_modules.tar.gz
+      - name: Zip standalone output
+        run: |
+          cd .next/standalone
+          zip -r ../../release.zip .
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
