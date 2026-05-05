@@ -46,7 +46,7 @@ const AboutBento = () => (
       <div className={`${styles.bentoCard} ${styles.bentoLarge} glass-panel`}>
         <div className={styles.bentoIcon}><Rocket size={32} /></div>
         <h3>Visionaries in Code</h3>
-        <p>At Synvexis Digital, we merge cutting-edge technology with stunning design to create digital experiences that leave a lasting impression. We don&apos;t just build sites; we build scalable digital solutions.</p>
+        <p>At Synvexis Private Limited, operating as Synvexis Digital, we merge cutting-edge technology with stunning design to create digital experiences that leave a lasting impression. We don&apos;t just build sites; we build scalable digital solutions.</p>
       </div>
       <div className={`${styles.bentoCard} glass-panel`}>
         <div className={styles.bentoIcon}><Zap size={32} /></div>
@@ -146,7 +146,7 @@ const ContactFooter = () => (
     <footer className={`${styles.footer} glass-panel`}>
       <div className={styles.footerContent}>
         <div className={styles.logo}>SYNVEXIS<span className="accent-text"> DIGITAL</span></div>
-        <p>© {new Date().getFullYear()} Synvexis Digital. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Synvexis Private Limited. Synvexis Digital is our trading name. All rights reserved.</p>
       </div>
     </footer>
   </>
