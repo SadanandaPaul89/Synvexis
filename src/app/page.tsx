@@ -2,6 +2,7 @@ import styles from "./page.module.css";
 import React from 'react';
 import Image from 'next/image';
 import { Rocket, Zap, Palette } from 'lucide-react';
+import { JsonLdSchema } from './components/JsonLdSchema';
 
 // --- Modern React Component Pattern ---
 
@@ -154,8 +155,82 @@ const ContactFooter = () => (
 
 // --- Main Page Component ---
 export default function Home() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.synvexis.digital/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About Us",
+        "item": "https://www.synvexis.digital/#about"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Our Work",
+        "item": "https://www.synvexis.digital/#projects"
+      }
+    ]
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Synvexis Digital",
+    "description": "Premium web development and digital product design agency",
+    "url": "https://www.synvexis.digital",
+    "image": "https://www.synvexis.digital/cyberpunk-bg.jpg",
+    "knowsAbout": [
+      "Web Development",
+      "UI/UX Design",
+      "Next.js",
+      "React Development",
+      "Digital Product Design",
+      "Custom Web Applications"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Web Development Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Custom Web Development",
+            "description": "Bespoke web applications built with modern technologies"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Digital Product Design",
+            "description": "High-performance design systems and user interfaces"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "UI/UX Design",
+            "description": "Premium aesthetic design with focus on conversion optimization"
+          }
+        }
+      ]
+    }
+  };
+
   return (
     <div className={styles.container}>
+      <JsonLdSchema data={breadcrumbSchema} />
+      <JsonLdSchema data={serviceSchema} />
       <Navbar />
       <main className={styles.main}>
         <HeroSection />
