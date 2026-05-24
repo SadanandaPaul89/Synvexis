@@ -19,6 +19,18 @@ const nextConfig = {
   },
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
+  async rewrites() {
+    return [
+      {
+        source: '/portfolio',
+        destination: '/portfolio/index.html',
+      },
+      {
+        source: '/portfolio/',
+        destination: '/portfolio/index.html',
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

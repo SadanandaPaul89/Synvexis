@@ -3,19 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import { Rocket, Zap, Palette } from 'lucide-react';
 import { JsonLdSchema } from './components/JsonLdSchema';
-
-// --- Modern React Component Pattern ---
-
-const Navbar = () => (
-  <nav className={`${styles.nav} glass-panel`}>
-    <div className={styles.logo}>SYNVEXIS<span className="accent-text"> DIGITAL</span></div>
-    <div className={styles.navLinks}>
-      <a href="#about">About</a>
-      <a href="#projects">Work</a>
-      <a href="#contact" className={styles.contactBtn}>Contact Us</a>
-    </div>
-  </nav>
-);
+import { Navbar } from './components/Navbar';
 
 const HeroSection = () => (
   <section className={`${styles.section} ${styles.hero}`}>
