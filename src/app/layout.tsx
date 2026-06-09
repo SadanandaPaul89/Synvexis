@@ -1,9 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Outfit } from "next/font/google";
-import Image from "next/image";
+import { DM_Sans, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({ subsets: ["latin"], display: 'swap' });
+const dmSans = DM_Sans({ 
+  subsets: ["latin"], 
+  weight: ["300", "400", "500", "600"], 
+  display: 'swap',
+  variable: '--font-dm-sans'
+});
+
+const cormorantGaramond = Cormorant_Garamond({ 
+  subsets: ["latin"], 
+  weight: ["300", "400", "600", "700"], 
+  display: 'swap',
+  variable: '--font-cormorant-garamond'
+});
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -131,7 +142,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={outfit.className}>
+    <html lang="en" className={`${dmSans.variable} ${cormorantGaramond.variable}`}>
       <head>
         <script
           type="application/ld+json"
@@ -141,20 +152,8 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body>
-        <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: -3 }}>
-          <Image
-            src="/synvexis-bg.png"
-            alt="Abstract Cyperpunk Desk Setup Background"
-            fill
-            priority
-            quality={85}
-            style={{ objectFit: 'cover' }}
-          />
-        </div>
         {children}
       </body>
     </html>

@@ -19,15 +19,17 @@ const nextConfig = {
   },
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
-  async rewrites() {
+  async redirects() {
     return [
       {
         source: '/portfolio',
-        destination: '/portfolio/index.html',
+        destination: '/',
+        permanent: true,
       },
       {
         source: '/portfolio/',
-        destination: '/portfolio/index.html',
+        destination: '/',
+        permanent: true,
       },
     ];
   },
